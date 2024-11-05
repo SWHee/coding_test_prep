@@ -13,3 +13,15 @@
 
 
 > 출처: SW Expert Academy, https://swexpertacademy.com/main/code/problem/problemList.do
+
+---
+
+![image](https://github.com/user-attachments/assets/aa8974a2-a99c-4013-9bd1-1b3ba9198783)
+
+---
+
+if (!isValidInputLength(input)) {
+            System.out.print("문자열의 최대 길이는 80 bytes 입니다.");
+            return; // 프로그램 종료
+        }
+로 변경가능
