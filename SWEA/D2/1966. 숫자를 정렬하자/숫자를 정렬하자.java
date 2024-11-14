@@ -17,12 +17,10 @@ class Solution {
 		for (int test_case = 1; test_case <= T; test_case++) {
 			int numLen = sc.nextInt(); sc.nextLine();
 			if (numLen > 50 || numLen < 5) System.out.println("숫자의 길이는 5 이상 50 이하만 입력 가능합니다.");
-			String[] input = sc.nextLine().split(" ");
-			
-			// input을 정수형 배열로 초기화.
+
 			int[] numbers = new int[numLen];
 			for (int i = 0; i < numLen; i++) {
-				numbers[i] = Integer.parseInt(input[i]);
+				numbers[i] = sc.nextInt();
 			}
 			
 			Arrays.sort(numbers);
@@ -31,7 +29,7 @@ class Solution {
 			for (int i = 0; i < numLen; i++) {
 				System.out.print(numbers[i] + " ");
 			}
-            System.out.println();
+			System.out.println();
 		}
 
 		sc.close();
