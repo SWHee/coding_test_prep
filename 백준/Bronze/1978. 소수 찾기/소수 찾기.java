@@ -21,6 +21,7 @@ public class Main {
                 for (int j = 2; j < currentNum; j++) {
                     if (currentNum % j == 0) {
                         isPrime = false;
+                        break;
                     }
                 }
             }
