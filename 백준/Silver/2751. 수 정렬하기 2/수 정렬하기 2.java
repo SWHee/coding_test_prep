@@ -1,31 +1,28 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.io.*;
 
 public class Main {
-
-    public static void main(String[] args) throws Exception {
-        // 이 수는 절댓값이 1,000,000보다 작거나 같은 정수이다. 수는 중복되지 않는다.
-
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        
+        int N = Integer.parseInt(br.readLine()); // 입력 개수
+        boolean[] exists = new boolean[2000001]; // -1,000,000 ~ 1,000,000을 저장 (절댓값 + 1,000,000)
 
-        int N = Integer.parseInt(br.readLine());
-        int[] numbers = new int[N];
-
+        // 입력 처리
         for (int i = 0; i < N; i++) {
-            numbers[i] = Integer.parseInt(br.readLine());
+            int num = Integer.parseInt(br.readLine());
+            exists[num + 1000000] = true; // 존재 여부 표시
         }
 
-        Integer[] sorted = Arrays.stream(numbers)
-                .boxed()
-                .sorted((a, b) -> a - b).toArray(Integer[]::new);
-
-        for (int num : sorted) {
-            sb.append(num + "\n");
+        // 오름차순 출력
+        for (int i = 0; i <= 2000000; i++) {
+            if (exists[i]) {
+                bw.write((i - 1000000) + "\n"); // 실제 값으로 변환
+            }
         }
 
-        System.out.println(sb);
+        bw.flush();
         br.close();
+        bw.close();
     }
 }
