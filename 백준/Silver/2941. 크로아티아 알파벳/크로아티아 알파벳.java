@@ -11,16 +11,11 @@ public class Main {
 
         String[] pattern = {"c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="};
 
-        for (int i = 0; i < pattern.length; i++) {
-            if (input.contains(pattern[i])) {
-                input = input.replaceAll(pattern[i], "*");
-            }
+        for (String croatia : pattern) {
+            input = input.replace(croatia, "*");
         }
 
-        String[] count = input.split("");
-
-
-        System.out.println(count.length);
+        System.out.println(input.length());
 
         br.close();
     }
