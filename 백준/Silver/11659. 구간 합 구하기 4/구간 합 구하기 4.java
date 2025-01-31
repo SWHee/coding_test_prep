@@ -9,6 +9,7 @@ public class Main {
 //      합을 구해야 하는 횟수 M
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
 
         StringTokenizer st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
@@ -25,8 +26,10 @@ public class Main {
             st = new StringTokenizer(br.readLine());
             int i = Integer.parseInt(st.nextToken());
             int j = Integer.parseInt(st.nextToken());
-            System.out.println(S[j] - S[i - 1]);
+            sb.append(S[j] - S[i - 1] + "\n");
         }
+
+        System.out.println(sb);
 
     }
 }
