@@ -1,5 +1,4 @@
 import java.util.*;
-
 class Solution {
     public int solution(int[][] routes) {
         // 모든 차량이 카메라 한 번은 만나도록
@@ -8,9 +7,7 @@ class Solution {
         // routes[i][0]에는 i번째 차량이 고속도로에 진입한 지점
         // routes[i][1]에는 i번째 차량이 고속도로에서 나간 지점
         
-        Arrays.sort(routes, (o1, o2) -> {
-            return o1[1] - o2[1];
-        });
+        Arrays.sort(routes, Comparator.comparingInt((int[] o) -> o[1]));
         
         int camera = Integer.MIN_VALUE;
         int camCount = 0;
