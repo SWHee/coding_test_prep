@@ -1,0 +1,11 @@
+SELECT E.ID, COUNT(C.PARENT_ID) AS CHILD_COUNT
+FROM ECOLI_DATA E LEFT JOIN (SELECT ID, PARENT_ID
+                        FROM ECOLI_DATA
+                        ) AS C
+ON E.ID = C.PARENT_ID
+GROUP BY E.ID
+ORDER BY E.ID ASC;
+
+-- 대장균 개체의 ID(ID)와 자식의 수(CHILD_COUNT)를 출력하는 SQL 문을 작성
+-- 결과는 개체의 ID 에 대해 오름차순 정렬
+-- SIZE_OF_COLONY, DIFFERENTIATION_DATE, GENOTYPE 필요 X
